@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Управление товарами</h1>
+
+    <a href="{% url 'add_product' %}">Добавить товар</a>
+
+    {% for product in products %}
+        <div>
+            <h3>{{ product.name }}</h3>
+            <p>Категория: {{ product.category }}</p>
+            <p>Цена: {{ product.price }}</p>
+            <a href="{% url 'edit_product' product.id %}">Редактировать товар</a> | 
+            <a href="{% url 'delete_product' product.id %}">Удалить товар</a>
+        </div>
+    {% endfor %}
+{% endblock %}

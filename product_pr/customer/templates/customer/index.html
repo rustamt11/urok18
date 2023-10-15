@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Электронные товары  (Добавляем через "\adminside\")</h1>
+
+    {% for product in products %}
+        <div>
+            <h3>{{ product.name }}</h3>
+            <p>Категория: {{ product.category }}</p>
+            <p>Цена: {{ product.price }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
